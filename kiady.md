@@ -4,3 +4,4 @@ insertion de la base dans sqlite3
 modification de la base et dernormalisation
 creation des models pour operateur
 creation des routes et du controller de l operator 
+reinitialisation de la base et correction des liens et des routes
