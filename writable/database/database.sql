@@ -6,7 +6,6 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE prefixes_operateur (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     prefixe VARCHAR(3) NOT NULL UNIQUE,
-    actif TINYINT NOT NULL DEFAULT 1,
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -50,6 +49,14 @@ CREATE TABLE clients (
     actif TINYINT NOT NULL DEFAULT 1
 );
 
+CREATE TABLE operateurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom_utilisateur VARCHAR(50) NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    actif TINYINT NOT NULL DEFAULT 1,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 -- ============================================
 -- Opérations (historique)
 -- Colonnes frais_transfert / frais_retrait_anticipe / option_transfert
@@ -74,6 +81,8 @@ CREATE TABLE operations (
     FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE,
     FOREIGN KEY (client_destinataire_id) REFERENCES clients(id) ON DELETE SET NULL
 );
+
+
 
 CREATE INDEX idx_operations_client ON operations(client_id);
 CREATE INDEX idx_operations_date ON operations(date_operation);
