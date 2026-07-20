@@ -36,5 +36,8 @@ Retrait
 <a href="/client/transfert">
 Transfert
 </a>
+<a href="/client/transfert-multiple">
+Envoi multiple
+</a>
 </body>
 </html>

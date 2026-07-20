@@ -57,4 +57,7 @@ $routes->group('client', function ($routes) {
 
     $routes->get('client/transfert-multiple', 'ClientController::transfertMultipleForm');
     $routes->post('client/transfert-multiple', 'ClientController::transfertMultiple');
+    $routes->get('transfert-multiple', 'ClientController::transfertMultipleForm');
+  $routes->post('transfert-multiple', 'ClientController::transfertMultiple');
 });
+
