@@ -12,6 +12,3 @@ Configuration de Database par sqlite3 (ok)
 
 creation du premiere page Home (ok)
 creation du page dashbord client (ok)
-
-
-
