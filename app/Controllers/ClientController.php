@@ -16,6 +16,12 @@ public function login()
     return view('client/login');
 }
 
+private function clientConnecte()
+{
+    $id = session()->get('client_id');
+    return $id ? (new ClientModel())->find($id) : null;
+}
+
 public function auth()
 {
 
