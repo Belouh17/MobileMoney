@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Connexion Mobile Money </h1>
+    <h1>Connexion Mobile Money Operateur</h1>
     <form action="/login" method="post">
         <label for="username">Nom d'utilisateur:</label>
         <input type="text" id="username" name="username" required><br><br>
@@ -16,6 +16,6 @@
 
         <input type="submit" value="Se connecter">
     </form>
-    create an account <a href="/register">Register</a>
+    connexion client  <a href="/client/login">client </a>
 </body>
 </html>

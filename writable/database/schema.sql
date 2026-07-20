@@ -71,6 +71,8 @@ CREATE TABLE operations (
     FOREIGN KEY (client_destinataire_id) REFERENCES clients(id) ON DELETE SET NULL
 );
 
+
+
 CREATE INDEX idx_operations_client ON operations(client_id);
 CREATE INDEX idx_operations_date ON operations(date_operation);
 
