@@ -209,4 +209,22 @@ public function montantsAEnvoyer()
     return view('operateur/montants_a_envoyer', ['montants' => $data]);
 }
 
+public function dashboard()
+{
+    $db = db_connect();
+    
+    $data['nbPrefixes'] = $db->table('prefixes_operateur')->where('actif', 1)->countAllResults();
+    $data['nbClients'] = $db->table('clients')->where('actif', 1)->countAllResults();
+    $data['nbTypes'] = $db->table('types_operation')->where('actif', 1)->countAllResults();
+    $data['nbAutresOperateurs'] = $db->table('autres_operateurs')->where('actif', 1)->countAllResults();
+    
+    $data['gainsAujourdhui'] = $db->table('benefices')
+        ->where('DATE(date_benefice)', date('Y-m-d'))
+        ->selectSum('montant', 'total')
+        ->get()
+        ->getRow()
+        ->total ?? 0;
+
+    return view('operateur/dashboard', $data);
+}
 }

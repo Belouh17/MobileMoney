@@ -9,41 +9,45 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/register', 'ClientController::register');
 
+// ---------- OPÉRATEUR (sans auth) ----------
 $routes->get('/operateur/login', 'OperateurController::login');
-$routes->post('/login', 'OperateurController::auth');
+$routes->post('/operateur/auth', 'OperateurController::auth');
 $routes->get('/operateur/logout', 'OperateurController::logout');
 
-$routes->group('operateur', ['filter' => 'operateurAuth'], function ($routes) {
-    $routes->get('prefixes', 'OperateurController::prefixes');
-    $routes->post('prefixes/ajouter', 'OperateurController::ajouterPrefixe');
-    $routes->post('prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixe/$1');
-    $routes->get('types', 'OperateurController::types');
-    $routes->post('types/ajouter', 'OperateurController::ajouterType');
-    $routes->get('baremes/(:num)', 'OperateurController::baremes/$1');
-    $routes->post('baremes/ajouter', 'OperateurController::ajouterBareme');
-    $routes->post('baremes/modifier/(:num)', 'OperateurController::modifierBareme/$1');
-    $routes->post('baremes/supprimer/(:num)', 'OperateurController::supprimerBareme/$1');
-    $routes->get('gains', 'OperateurController::gains');
-    $routes->get('comptes', 'OperateurController::comptes');
+$routes->get('operateur/dashboard', 'OperateurController::dashboard');
 
-    $routes->get('autres-operateurs', 'OperateurController::autresOperateurs');
-    $routes->post('autres-operateurs/ajouter', 'OperateurController::ajouterAutreOperateur');
-    $routes->post('autres-operateurs/modifier/(:num)', 'OperateurController::modifierAutreOperateur/$1');
+$routes->get('operateur/prefixes', 'OperateurController::prefixes');
+$routes->post('operateur/prefixes/ajouter', 'OperateurController::ajouterPrefixe');
+$routes->post('operateur/prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixe/$1');
 
-    $routes->get('autres-operateurs/(:num)/prefixes', 'OperateurController::prefixesAutreOperateur/$1');
-    $routes->post('autres-operateurs/prefixes/ajouter', 'OperateurController::ajouterPrefixeAutreOperateur');
-    $routes->post('autres-operateurs/prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixeAutreOperateur/$1');
+$routes->get('operateur/types', 'OperateurController::types');
+$routes->post('operateur/types/ajouter', 'OperateurController::ajouterType');
 
-    $routes->get('montants-a-envoyer', 'OperateurController::montantsAEnvoyer');
-});
+$routes->get('operateur/baremes/(:num)', 'OperateurController::baremes/$1');
+$routes->post('operateur/baremes/ajouter', 'OperateurController::ajouterBareme');
+$routes->post('operateur/baremes/modifier/(:num)', 'OperateurController::modifierBareme/$1');
+$routes->post('operateur/baremes/supprimer/(:num)', 'OperateurController::supprimerBareme/$1');
 
+$routes->get('operateur/gains', 'OperateurController::gains');
+$routes->get('operateur/comptes', 'OperateurController::comptes');
+
+$routes->get('operateur/autres-operateurs', 'OperateurController::autresOperateurs');
+$routes->post('operateur/autres-operateurs/ajouter', 'OperateurController::ajouterAutreOperateur');
+$routes->post('operateur/autres-operateurs/modifier/(:num)', 'OperateurController::modifierAutreOperateur/$1');
+
+$routes->get('operateur/autres-operateurs/(:num)/prefixes', 'OperateurController::prefixesAutreOperateur/$1');
+$routes->post('operateur/autres-operateurs/prefixes/ajouter', 'OperateurController::ajouterPrefixeAutreOperateur');
+$routes->post('operateur/autres-operateurs/prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixeAutreOperateur/$1');
+
+$routes->get('operateur/montants-a-envoyer', 'OperateurController::montantsAEnvoyer');
+
+// ---------- CLIENT ----------
 $routes->group('client', function ($routes) {
     $routes->get('login', 'ClientController::login');
     $routes->post('auth', 'ClientController::auth');
-    $routes->get('dashbord', 'ClientController::dashbord');
+    $routes->get('dashboard', 'ClientController::dashboard');
     $routes->get('historique', 'ClientController::historique');
 
-    // formulaire (GET) + traitement (POST) séparés
     $routes->get('depot', 'ClientController::depotForm');
     $routes->post('depot', 'ClientController::depot');
 
@@ -55,6 +59,6 @@ $routes->group('client', function ($routes) {
 
     $routes->get('logout', 'ClientController::logout');
 
-    $routes->get('client/transfert-multiple', 'ClientController::transfertMultipleForm');
-    $routes->post('client/transfert-multiple', 'ClientController::transfertMultiple');
+    $routes->get('transfert-multiple', 'ClientController::transfertMultipleForm');
+    $routes->post('transfert-multiple', 'ClientController::transfertMultiple');
 });
