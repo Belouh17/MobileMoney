@@ -25,9 +25,10 @@ public function auth()
     $model = new ClientModel();
 
 
-    $telephone = $this->request
-                  ->getPost('telephone');
-
+    $telephone = trim((string) $this->request->getPost('telephone'));
+    if ($telephone === '') {
+        return redirect()->back()->withInput()->with('error', 'Numéro de téléphone requis.');
+    }
 
     $client = $model
               ->where(
