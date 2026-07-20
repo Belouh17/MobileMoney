@@ -24,7 +24,6 @@ $routes->get('/client/dashbord','ClientController::dashbord');
 $routes->post('/client/depot','ClientController::depot');
 
 
-$routes->post('/client/retrait','ClientController::retrait');
-
-
-$routes->post('/client/transfert','ClientController::transfert');
+// $routes->post('/client/retrait','ClientController::retrait');
+// 
+// $routes->post('/client/transfert','ClientController::transfert');
