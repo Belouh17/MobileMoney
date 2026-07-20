@@ -2257,3 +2257,84 @@ DEBUG - 2026-07-20 13:20:29 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2026-07-20 13:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-20 13:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-07-20 13:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 13:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 13:39:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 13:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 13:40:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 13:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 13:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-20 23:10:50 --> Prefixe non valide pour l'operateur
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 5 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/ClientController.php(49): CodeIgniter\Model->insert([...], true)
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 23:10:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Prefixe non valide pour l'operateur
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 2 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Controllers/ClientController.php(49): CodeIgniter\Model->insert([...], true)
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 23:10:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Prefixe non valide pour l'operateur
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 4 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Controllers/ClientController.php(49): CodeIgniter\Model->insert([...], true)
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 23:10:50 --> [Caused by] SQLite3Exception: Prefixe non valide pour l'operateur
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 5 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/ClientController.php(49): CodeIgniter\Model->insert([...], true)
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+DEBUG - 2026-07-20 23:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:11:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 23:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

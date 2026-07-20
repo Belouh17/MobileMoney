@@ -407,5 +407,10 @@ public function transfertMultiple()
     $db->transComplete();
     return redirect()->to('client/dashbord');
 }
+public function logout()
+{
+    session()->remove(['client_id', 'telephone']);
+    return redirect()->to('/client/login');
+}
 
 }

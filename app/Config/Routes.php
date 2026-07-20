@@ -42,8 +42,8 @@ $routes->group('client', function ($routes) {
     $routes->post('auth', 'ClientController::auth');
     $routes->get('dashbord', 'ClientController::dashbord');
     $routes->get('historique', 'ClientController::historique');
+    $routes->get('logout', 'ClientController::logout');
 
-    // formulaire (GET) + traitement (POST) séparés
     $routes->get('depot', 'ClientController::depotForm');
     $routes->post('depot', 'ClientController::depot');
 
@@ -53,11 +53,7 @@ $routes->group('client', function ($routes) {
     $routes->get('transfert', 'ClientController::transfertForm');
     $routes->post('transfert', 'ClientController::transfert');
 
-    $routes->get('logout', 'ClientController::logout');
-
-    $routes->get('client/transfert-multiple', 'ClientController::transfertMultipleForm');
-    $routes->post('client/transfert-multiple', 'ClientController::transfertMultiple');
     $routes->get('transfert-multiple', 'ClientController::transfertMultipleForm');
-  $routes->post('transfert-multiple', 'ClientController::transfertMultiple');
+    $routes->post('transfert-multiple', 'ClientController::transfertMultiple');
 });
 
