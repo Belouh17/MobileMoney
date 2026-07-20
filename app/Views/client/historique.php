@@ -26,6 +26,6 @@ Historique
 </p>
 
 
-<?php endforeach ?>
+<?php endforeach; ?>
 </body>
 </html>
