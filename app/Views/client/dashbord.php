@@ -6,8 +6,35 @@
     <title>Document</title>
 </head>
 <body>
-    Bienvenue sur le tableau de bord du client.
-    <p>Vous êtes connecté en tant que client.</p>
-    <a href="/logout">Se déconnecter</a>
+    <h1>
+Bienvenue
+</h1>
+
+
+<h2>
+Solde :
+<?= $client['solde'] ?>
+Ar
+</h2>
+
+
+<a href="/client/historique">
+Historique
+</a>
+
+
+<a href="/client/depot">
+Dépôt
+</a>
+
+
+<a href="/client/retrait">
+Retrait
+</a>
+
+
+<a href="/client/transfert">
+Transfert
+</a>
 </body>
 </html>
