@@ -56,8 +56,7 @@ class Database extends Config
         *
         * @var array<string, mixed>
         */
-       public array $default = [
-           'database'    => WRITEPATH . 'database' . DIRECTORY_SEPARATOR . 'database.db',
+       public array $default = ['database' => WRITEPATH . 'database' . DIRECTORY_SEPARATOR . 'database.sqlite',
            'DBDriver'    => 'SQLite3',
            'DBPrefix'    => '',
            'DBDebug'     => true,

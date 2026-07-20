@@ -6,21 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Connexion</h2>
-
-
-<form method="post" action="/client/auth">
-
-<input 
-type="text" 
-name="telephone"
-placeholder="Votre numéro">
-
-
-<button>
-Connexion
-</button>
-
-</form>
+    
 </body>
 </html>

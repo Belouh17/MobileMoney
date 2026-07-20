@@ -6,6 +6,7 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE prefixes_operateur (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     prefixe VARCHAR(3) NOT NULL UNIQUE,
+    actif TINYINT NOT NULL DEFAULT 1,
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -55,14 +56,6 @@ CREATE TABLE clients (
     date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
     date_derniere_connexion DATETIME,
     actif TINYINT NOT NULL DEFAULT 1
-);
-
-CREATE TABLE operateurs (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nom_utilisateur VARCHAR(50) NOT NULL,
-    mot_de_passe VARCHAR(255) NOT NULL,
-    actif TINYINT NOT NULL DEFAULT 1,
-    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ============================================

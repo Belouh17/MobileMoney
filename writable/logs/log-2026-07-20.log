@@ -1,0 +1,778 @@
+CRITICAL - 2026-07-20 07:41:22 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:41:49 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:41:49 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:41:49 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:43:17 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:43:17 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:43:17 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:43:57 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:44:23 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:44:23 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:44:23 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 07:44:33 --> Error: Class "BaseController" not found
+[Method: GET, Route: client/login]
+in APPPATH/Controllers/ClientController.php on line 3.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(315): include_once()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php')
+ 3 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClientController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClientController')
+ 5 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\ClientController')
+ 6 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 7 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('client/login')
+ 8 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:11:35 --> Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:11:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such table: clients
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:11:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:11:35 --> [Caused by] SQLite3Exception: Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:14:34 --> Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:14:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such table: clients
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:14:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:14:34 --> [Caused by] SQLite3Exception: Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:30:30 --> Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:30:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such table: clients
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:30:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:30:30 --> [Caused by] SQLite3Exception: Unable to prepare statement: no such table: clients
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = \'0329881389\'
+ LIMIT 1')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:38:05 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(111): SQLite3->__construct('database/databa...')
+#1 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect(false)
+#2 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+#8 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+#9 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#10 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/rewrite.php(44): require_once('/Users/mac/Desk...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect(false)
+#1 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+#7 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+#8 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#9 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/rewrite.php(44): require_once('/Users/mac/Desk...')
+#14 {main}
+CRITICAL - 2026-07-20 08:38:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:42:05 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(111): SQLite3->__construct('writable/databa...')
+#1 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect(false)
+#2 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+#8 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+#9 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#10 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/rewrite.php(44): require_once('/Users/mac/Desk...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect(false)
+#1 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+#7 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+#8 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#9 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/rewrite.php(44): require_once('/Users/mac/Desk...')
+#14 {main}
+CRITICAL - 2026-07-20 08:42:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:45:34 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(111): SQLite3->__construct('writable/databa...')
+#1 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect(false)
+#2 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+#8 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+#9 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#10 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/rewrite.php(44): require_once('/Users/mac/Desk...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect(false)
+#1 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/app/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+#7 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+#8 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+#9 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/system/rewrite.php(44): require_once('/Users/mac/Desk...')
+#14 {main}
+CRITICAL - 2026-07-20 08:45:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `clients`
+WHERE `numero_telephone` = :numero_telephone:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Controllers/ClientController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+ERROR - 2026-07-20 08:53:55 --> Prefixe non valide pour l'operateur
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 5 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/ClientController.php(45): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:53:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Prefixe non valide pour l'operateur
+[Method: POST, Route: client/auth]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 2 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Controllers/ClientController.php(45): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:53:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Prefixe non valide pour l'operateur
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 4 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Controllers/ClientController.php(45): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 08:53:55 --> [Caused by] SQLite3Exception: Prefixe non valide pour l'operateur
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (\'0329881389\', 0)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clients` (`numero_telephone`, `solde`) VALUES (:numero_telephone:, :solde:)', [...], false)
+ 5 SYSTEMPATH/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(668): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/ClientController.php(45): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->auth()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+DEBUG - 2026-07-20 08:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 08:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 08:56:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/dashboard.php"
+[Method: GET, Route: client/dashboard]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('client/dashboard.php')
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/dashboard', [], true)
+ 3 APPPATH/Controllers/ClientController.php(79): view('client/dashboard', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->dashboard()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+DEBUG - 2026-07-20 09:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 09:00:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/dashboard.php"
+[Method: GET, Route: client/dashboard]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('client/dashboard.php')
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/dashboard', [], true)
+ 3 APPPATH/Controllers/ClientController.php(79): view('client/dashboard', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->dashboard()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+DEBUG - 2026-07-20 09:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 09:00:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/dashboard.php"
+[Method: GET, Route: client/dashboard]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('client/dashboard.php')
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/dashboard', [], true)
+ 3 APPPATH/Controllers/ClientController.php(79): view('client/dashboard', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->dashboard()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+DEBUG - 2026-07-20 09:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-20 09:00:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "client/dashboard.php"
+[Method: GET, Route: client/dashboard]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('client/dashboard.php')
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/dashboard', [], true)
+ 3 APPPATH/Controllers/ClientController.php(79): view('client/dashboard', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\ClientController->dashboard()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClientController))
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Users/mac/Desktop/s4/ROJO/SI/exam_final_s4/framewortk-codeigniter-Tena-izy/MobileMoney/public/index.php')
+DEBUG - 2026-07-20 09:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 09:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 09:03:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 09:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-20 09:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

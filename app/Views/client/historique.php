@@ -6,21 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Connexion</h2>
+    <h2>
+Historique
+</h2>
 
 
-<form method="post" action="/client/auth">
+<?php foreach($operations as $op): ?>
 
-<input 
-type="text" 
-name="telephone"
-placeholder="Votre numéro">
+<p>
+
+<?= $op->reference ?>
+
+-
+<?= $op->montant ?>
+
+-
+<?= $op->date_operation ?>
+
+</p>
 
 
-<button>
-Connexion
-</button>
-
-</form>
+<?php endforeach ?>
 </body>
 </html>
