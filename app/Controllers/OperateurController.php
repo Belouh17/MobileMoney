@@ -7,6 +7,8 @@ use App\Models\BaremeFraisModel;
 use App\Models\BeneficeModel;
 use App\Models\OperateurModel;
 use App\Models\ClientModel;
+use App\Models\AutreOperateurModel;
+use App\Models\AutreOperateurPrefixeModel;
 
 class OperateurController extends BaseController
 {
@@ -146,6 +148,65 @@ public function logout()
 {
     session()->remove(['operateur_id', 'operateur_nom']);
     return redirect()->to('/operateur/login');
+}
+
+public function autresOperateurs()
+{
+    $model = new AutreOperateurModel();
+    return view('operateur/autres_operateurs', ['operateurs' => $model->findAll()]);
+}
+
+public function ajouterAutreOperateur()
+{
+    $model = new AutreOperateurModel();
+    $model->insert([
+        'nom' => $this->request->getPost('nom'),
+        'commission_pourcentage' => $this->request->getPost('commission_pourcentage') ?: 0,
+        'actif' => 1,
+    ]);
+    return redirect()->to('/operateur/autres-operateurs');
+}
+
+public function modifierAutreOperateur($id)
+{
+    (new AutreOperateurModel())->update($id, [
+        'commission_pourcentage' => $this->request->getPost('commission_pourcentage'),
+    ]);
+    return redirect()->to('/operateur/autres-operateurs');
+}
+
+public function prefixesAutreOperateur($autreOperateurId)
+{
+    $prefixeModel = new AutreOperateurPrefixeModel();
+    $operateurModel = new AutreOperateurModel();
+
+    return view('operateur/autres_operateurs_prefixes', [
+        'prefixes' => $prefixeModel->where('autre_operateur_id', $autreOperateurId)->findAll(),
+        'operateur' => $operateurModel->find($autreOperateurId),
+    ]);
+}
+
+public function ajouterPrefixeAutreOperateur()
+{
+    (new AutreOperateurPrefixeModel())->insert([
+        'autre_operateur_id' => $this->request->getPost('autre_operateur_id'),
+        'prefixe' => $this->request->getPost('prefixe'),
+        'actif' => 1,
+    ]);
+    return redirect()->back();
+}
+
+public function supprimerPrefixeAutreOperateur($id)
+{
+    (new AutreOperateurPrefixeModel())->delete($id);
+    return redirect()->back();
+}
+
+public function montantsAEnvoyer()
+{
+    $db = db_connect();
+    $data = $db->query('SELECT * FROM vue_montants_a_envoyer')->getResultArray();
+    return view('operateur/montants_a_envoyer', ['montants' => $data]);
 }
 
 }
