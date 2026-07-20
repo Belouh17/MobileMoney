@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/register', 'Auth::register');
+$routes->get('/register', 'ClientController::register');
 
 $routes->group('operateur', function($routes) {
     // Préfixes
