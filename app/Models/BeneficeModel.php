@@ -16,4 +16,16 @@ class BeneficeModel extends Model
                      ->groupBy('types_operation.libelle')
                      ->findAll();
     }
+
+    public function enregistrer(int $operationId, int $typeOperationId, float $montant): void
+    {
+        if ($montant > 0) {
+            $this->insert([
+                'operation_id' => $operationId,
+                'type_operation_id' => $typeOperationId,
+                'montant' => $montant,
+            ]);
+        }
+    }
+
 }

@@ -5,6 +5,7 @@ use App\Models\PrefixeModel;
 use App\Models\TypeOperationModel;
 use App\Models\BaremeFraisModel;
 use App\Models\BeneficeModel;
+use App\Models\OperateurModel;
 use App\Models\ClientModel;
 
 class OperateurController extends BaseController
@@ -108,4 +109,43 @@ class OperateurController extends BaseController
         $model = new ClientModel();
         return view('operateur/comptes', ['clients' => $model->situationComptes()]);
     }
+
+
+// ---------- Connexion ----------
+public function login()
+{
+    return view('operateur/login');
+}
+
+public function auth()
+{
+    $model = new OperateurModel();
+
+    $nomUtilisateur = trim($this->request->getPost('username'));
+    $motDePasse = $this->request->getPost('password');
+
+    $operateur = $model->where('nom_utilisateur', $nomUtilisateur)
+                        ->where('actif', 1)
+                        ->first();
+
+    if (!$operateur || !password_verify($motDePasse, $operateur['mot_de_passe'])) {
+        return redirect()->to('/operateur/login')->with('erreur', 'Identifiants incorrects.');
+    }
+
+    $model->update($operateur['id'], ['date_derniere_connexion' => date('Y-m-d H:i:s')]);
+
+    session()->set([
+        'operateur_id' => $operateur['id'],
+        'operateur_nom' => $operateur['nom_utilisateur'],
+    ]);
+
+    return redirect()->to('/operateur/prefixes');
+}
+
+public function logout()
+{
+    session()->remove(['operateur_id', 'operateur_nom']);
+    return redirect()->to('/operateur/login');
+}
+
 }

@@ -128,3 +128,46 @@ SELECT t.libelle AS type_operation, SUM(b.montant) AS total_frais
 FROM benefices b
 JOIN types_operation t ON t.id = b.type_operation_id
 GROUP BY t.libelle;
+
+-- Table des autres opérateurs (Telma, Airtel, Orange, etc.)
+CREATE TABLE autres_operateurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    commission_pourcentage DECIMAL(5,2) NOT NULL DEFAULT 0,
+    actif TINYINT NOT NULL DEFAULT 1,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Préfixes appartenant à chaque autre opérateur
+CREATE TABLE autres_operateurs_prefixes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    autre_operateur_id INTEGER NOT NULL,
+    prefixe VARCHAR(3) NOT NULL UNIQUE,
+    actif TINYINT NOT NULL DEFAULT 1,
+    FOREIGN KEY (autre_operateur_id) REFERENCES autres_operateurs(id) ON DELETE CASCADE
+);
+
+-- Ajout sur operations : à quel autre opérateur (NULL = interne) + regroupement des envois multiples
+ALTER TABLE operations ADD COLUMN autre_operateur_id INTEGER REFERENCES autres_operateurs(id);
+ALTER TABLE operations ADD COLUMN reference_lot VARCHAR(30);
+
+-- Vue des gains séparée : notre réseau vs autres opérateurs
+DROP VIEW IF EXISTS vue_gains_frais;
+CREATE VIEW vue_gains_frais AS
+SELECT
+    CASE WHEN o.autre_operateur_id IS NULL THEN 'Notre opérateur' ELSE ao.nom END AS reseau,
+    t.libelle AS type_operation,
+    SUM(b.montant) AS total_frais
+FROM benefices b
+JOIN operations o ON o.id = b.operation_id
+JOIN types_operation t ON t.id = b.type_operation_id
+LEFT JOIN autres_operateurs ao ON ao.id = o.autre_operateur_id
+GROUP BY reseau, t.libelle;
+
+-- Vue : montants à envoyer/régler à chaque autre opérateur
+CREATE VIEW vue_montants_a_envoyer AS
+SELECT ao.nom AS autre_operateur, SUM(o.montant) AS montant_total_a_envoyer
+FROM operations o
+JOIN autres_operateurs ao ON ao.id = o.autre_operateur_id
+WHERE o.autre_operateur_id IS NOT NULL
+GROUP BY ao.nom;

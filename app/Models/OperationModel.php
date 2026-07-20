@@ -7,7 +7,6 @@ use CodeIgniter\Model;
 class OperationModel extends Model
 {
     protected $table = 'operations';
-
     protected $primaryKey = 'id';
 
     protected $allowedFields = [
@@ -17,6 +16,9 @@ class OperationModel extends Model
         'client_destinataire_id',
         'montant',
         'frais',
+        'frais_transfert',
+        'frais_retrait_anticipe',
+        'option_transfert',
         'solde_avant',
         'solde_apres',
         'statut'
