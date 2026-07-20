@@ -5,11 +5,12 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/test-db', function () {
-    $db = \Config\Database::connect();
-
-    echo "Connexion SQLite OK";
-});
+if (ENVIRONMENT === 'development') {
+    $routes->get('/test-db', static function () {
+        \Config\Database::connect();
+        return 'Connexion SQLite OK';
+    });
+}
 $routes->get('/', 'Home::index');
 $routes->get('/client/login', 'ClientController::login');
 $routes->post('/client/auth', 'ClientController::auth');
