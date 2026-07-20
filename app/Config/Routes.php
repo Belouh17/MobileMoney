@@ -18,7 +18,7 @@ $routes->post('/client/auth', 'ClientController::auth');
 $routes->get('/client/dashbord','ClientController::dashbord');
 
 
-$routes->get('/client/historique','ClientController::historique');
+// $routes->get('/client/historique','ClientController::historique');
 
 
 $routes->post('/client/depot','ClientController::depot');
