@@ -9,25 +9,32 @@ $routes->get('/', 'Home::index');
 
 $routes->get('/register', 'ClientController::register');
 
-$routes->group('operateur', ['filter' => 'operateurAuth'], function($routes) {
 $routes->get('/operateur/login', 'OperateurController::login');
-$routes->post('/login', 'OperateurController::auth');   // correspond à action="/login" de ta vue
+$routes->post('/login', 'OperateurController::auth');
 $routes->get('/operateur/logout', 'OperateurController::logout');
 
+$routes->group('operateur', ['filter' => 'operateurAuth'], function ($routes) {
     $routes->get('prefixes', 'OperateurController::prefixes');
     $routes->post('prefixes/ajouter', 'OperateurController::ajouterPrefixe');
     $routes->post('prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixe/$1');
-
     $routes->get('types', 'OperateurController::types');
     $routes->post('types/ajouter', 'OperateurController::ajouterType');
-
     $routes->get('baremes/(:num)', 'OperateurController::baremes/$1');
     $routes->post('baremes/ajouter', 'OperateurController::ajouterBareme');
     $routes->post('baremes/modifier/(:num)', 'OperateurController::modifierBareme/$1');
     $routes->post('baremes/supprimer/(:num)', 'OperateurController::supprimerBareme/$1');
-
     $routes->get('gains', 'OperateurController::gains');
     $routes->get('comptes', 'OperateurController::comptes');
+
+    $routes->get('autres-operateurs', 'OperateurController::autresOperateurs');
+    $routes->post('autres-operateurs/ajouter', 'OperateurController::ajouterAutreOperateur');
+    $routes->post('autres-operateurs/modifier/(:num)', 'OperateurController::modifierAutreOperateur/$1');
+
+    $routes->get('autres-operateurs/(:num)/prefixes', 'OperateurController::prefixesAutreOperateur/$1');
+    $routes->post('autres-operateurs/prefixes/ajouter', 'OperateurController::ajouterPrefixeAutreOperateur');
+    $routes->post('autres-operateurs/prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixeAutreOperateur/$1');
+
+    $routes->get('montants-a-envoyer', 'OperateurController::montantsAEnvoyer');
 });
 
 $routes->group('client', function ($routes) {
@@ -47,4 +54,7 @@ $routes->group('client', function ($routes) {
     $routes->post('transfert', 'ClientController::transfert');
 
     $routes->get('logout', 'ClientController::logout');
+
+    $routes->get('client/transfert-multiple', 'ClientController::transfertMultipleForm');
+    $routes->post('client/transfert-multiple', 'ClientController::transfertMultiple');
 });

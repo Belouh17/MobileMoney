@@ -6,89 +6,94 @@ use App\Models\ClientModel;
 use App\Models\TypeOperationModel;
 use App\Models\BaremeFraisModel;
 use App\Models\BeneficeModel;
+use App\Models\AutreOperateurModel;
 
 class ClientController extends BaseController
 {
 
 
-public function login()
-{
-    return view('client/login');
-}
-
-public function auth()
-{
-
-    $model = new ClientModel();
-
-
-    $telephone = trim((string) $this->request->getPost('telephone'));
-    if ($telephone === '') {
-        return redirect()->back()->withInput()->with('error', 'Numéro de téléphone requis.');
+    public function login()
+    {
+        return view('client/login');
     }
 
-    $client = $model
-              ->where(
-                  'numero_telephone',
-                  $telephone
+    private function clientConnecte()
+    {
+        $id = session()->get('client_id');
+        return $id ? (new ClientModel())->find($id) : null;
+    }
+
+    public function auth()
+    {
+
+        $model = new ClientModel();
+
+
+        $telephone = trim((string) $this->request->getPost('telephone'));
+        if ($telephone === '') {
+            return redirect()->back()->withInput()->with('error', 'Numéro de téléphone requis.');
+        }
+
+        $client = $model
+            ->where(
+                'numero_telephone',
+                $telephone
             )
             ->first();
 
 
 
-    if(!$client)
-    {
+        if (!$client) {
 
-        // création automatique
-        $id = $model->insert([
-            'numero_telephone' => $telephone,
-            'solde' => 0,
-        ], true);
+            // création automatique
+            $id = $model->insert([
+                'numero_telephone' => $telephone,
+                'solde' => 0,
+            ], true);
 
-        if ($id === false) {
-            return redirect()->back()->withInput()->with('error', 'Impossible de créer le compte client.');
+            if ($id === false) {
+                return redirect()->back()->withInput()->with('error', 'Impossible de créer le compte client.');
+            }
+
+            $client = $model->find($id);
         }
 
-        $client = $model->find($id);
-    }
 
 
-
-    session()->set([
-        'client_id'=>$client['id'],
-        'telephone'=>$telephone
+        session()->set([
+            'client_id' => $client['id'],
+            'telephone' => $telephone
         ]);
 
 
-    return redirect()
-           ->to('client/dashbord');
+        return redirect()
+            ->to('client/dashbord');
+    }
+    public function dashbord()
+    {
 
-}
-public function dashbord()
-{
-
-    $id=session()->get('client_id');
-
-
-    $model=new ClientModel();
+        $id = session()->get('client_id');
 
 
-    $data['client']=$model->find($id);
+        $model = new ClientModel();
 
 
-    return view(
-    'client/dashbord',
-    $data
-    );
-}
-public function depotForm()
+        $data['client'] = $model->find($id);
+
+
+        return view(
+            'client/dashbord',
+            $data
+        );
+    }
+    public function depotForm()
     {
         $model = new ClientModel();
         $data['client'] = $model->find(session()->get('client_id'));
         return view('client/depot', $data);
     }
 
- public function depot()
+    public function depot()
     {
         $clientId = session()->get('client_id');
         $montant  = (float) $this->request->getPost('montant');
@@ -124,7 +129,7 @@ public function depotForm()
 
         return redirect()->to('client/dashbord');
     }
-     public function retraitForm()
+    public function retraitForm()
     {
         $model = new ClientModel();
         $data['client'] = $model->find(session()->get('client_id'));
@@ -188,83 +193,123 @@ public function depotForm()
 
         return redirect()->to('client/dashbord');
     }
-     public function transfertForm()
+    public function transfertForm()
     {
         $model = new ClientModel();
         $data['client'] = $model->find(session()->get('client_id'));
         return view('client/transfert', $data);
     }
-     public function transfert()
+
+    public function transfert()
     {
-        $clientId       = session()->get('client_id');
-        $telDestinataire = $this->request->getPost('telephone_destinataire');
-        $montant        = (float) $this->request->getPost('montant');
+        $client = $this->clientConnecte();
+        if (!$client) return redirect()->to('/client/login');
+
+        $telDest = trim($this->request->getPost('telephone_destinataire'));
+        $montant = (float) $this->request->getPost('montant');
+        $optionFraisRetrait = $this->request->getPost('option_frais_retrait'); // ignoré si autre opérateur
 
         if ($montant <= 0) {
             return redirect()->to('client/transfert')->with('error', 'Montant invalide.');
         }
 
+        $clientModel = new ClientModel();
+        $destinataire = $clientModel->where('numero_telephone', $telDest)->first();
+
+        $typeModel = new TypeOperationModel();
+        $baremeModel = new BaremeFraisModel();
+        $beneficeModel = new BeneficeModel();
+        $type = $typeModel->where('code', 'TRANSFERT')->first();
+        $bareme = $baremeModel->getBaremeParType($type['id'], $montant);
+        $fraisTransfert = $bareme ? (float) $bareme['frais_fixe'] + $montant * ((float) $bareme['frais_pourcentage'] / 100) : 0;
+
         $db = db_connect();
 
-        $destinataire = $db->table('clients')->where('numero_telephone', $telDestinataire)->get()->getRow();
+        if ($destinataire) {
+            // ---------- Transfert interne (notre réseau) ----------
+            $fraisRetraitAnticipe = 0;
+            if ($optionFraisRetrait === 'AVEC_FRAIS_RETRAIT') {
+                $typeRetrait = $typeModel->where('code', 'RETRAIT')->first();
+                $baremeRetrait = $baremeModel->getBaremeParType($typeRetrait['id'], $montant);
+                $fraisRetraitAnticipe = $baremeRetrait ? (float) $baremeRetrait['frais_fixe'] : 0;
+            }
 
-        if (!$destinataire) {
-            return redirect()->to('client/transfert')->with('error', 'Destinataire introuvable.');
+            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe;
+            if ($total > $client['solde']) {
+                return redirect()->to('client/transfert')->with('error', 'Solde insuffisant.');
+            }
+
+            $db->transStart();
+            $soldeApresClient = $client['solde'] - $total;
+            $soldeApresDest = $destinataire['solde'] + $montant + $fraisRetraitAnticipe;
+
+            $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeApresClient]);
+            $db->table('clients')->where('id', $destinataire['id'])->update(['solde' => $soldeApresDest]);
+
+            $db->table('operations')->insert([
+                'reference' => uniqid('TRF-'),
+                'type_operation_id' => $type['id'],
+                'client_id' => $client['id'],
+                'client_destinataire_id' => $destinataire['id'],
+                'montant' => $montant,
+                'frais' => $fraisTransfert + $fraisRetraitAnticipe,
+                'solde_avant' => $client['solde'],
+                'solde_apres' => $soldeApresClient,
+                'statut' => 'REUSSI',
+            ]);
+            $opId = $db->insertID();
+
+            if ($fraisTransfert > 0) {
+                $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $type['id'], 'montant' => $fraisTransfert]);
+            }
+            if ($fraisRetraitAnticipe > 0) {
+                $typeRetrait = $typeModel->where('code', 'RETRAIT')->first();
+                $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $typeRetrait['id'], 'montant' => $fraisRetraitAnticipe]);
+            }
+
+            $db->transComplete();
+            return redirect()->to('client/dashbord');
         }
 
-        if ($destinataire->id == $clientId) {
-            return redirect()->to('client/transfert')->with('error', 'Impossible de se transférer à soi-même.');
+        // ---------- Transfert vers un autre opérateur ----------
+        $autreOperateurModel = new AutreOperateurModel();
+        $autreOperateur = $autreOperateurModel->trouverParTelephone($telDest);
+
+        if (!$autreOperateur) {
+            return redirect()->to('client/transfert')->with('error', 'Numéro non reconnu.');
         }
 
-        $typeModel     = new TypeOperationModel();
-        $baremeModel   = new BaremeFraisModel();
-        $beneficeModel = new BeneficeModel();
+        // pas de frais de retrait anticipé possible ici
+        $commission = $montant * ((float) $autreOperateur['commission_pourcentage'] / 100);
+        $fraisTotal = $fraisTransfert + $commission;
+        $total = $montant + $fraisTotal;
 
-        $type   = $typeModel->where('code', 'TRANSFERT')->first();
-        $bareme = $baremeModel->getBaremeParType($type['id'], $montant);
-
-        $frais = $bareme
-            ? (float) $bareme['frais_fixe'] + $montant * ((float) $bareme['frais_pourcentage'] / 100)
-            : 0;
-
-        $client = $db->table('clients')->where('id', $clientId)->get()->getRow();
-
-        $total = $montant + $frais;
-
-        if ($total > $client->solde) {
+        if ($total > $client['solde']) {
             return redirect()->to('client/transfert')->with('error', 'Solde insuffisant.');
         }
 
         $db->transStart();
-
-        $soldeApresClient = $client->solde - $total;
-        $soldeApresDest   = $destinataire->solde + $montant;
-
-        $db->table('clients')->where('id', $clientId)->update(['solde' => $soldeApresClient]);
-        $db->table('clients')->where('id', $destinataire->id)->update(['solde' => $soldeApresDest]);
+        $soldeApresClient = $client['solde'] - $total;
+        $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeApresClient]);
 
         $db->table('operations')->insert([
-            'reference'              => uniqid('TRF-'),
-            'type_operation_id'      => $type['id'],
-            'client_id'              => $clientId,
-            'client_destinataire_id' => $destinataire->id,
-            'montant'                => $montant,
-            'frais'                  => $frais,
-            'solde_avant'            => $client->solde,
-            'solde_apres'            => $soldeApresClient,
-            'statut'                 => 'REUSSI',
+            'reference' => uniqid('TRF-EXT-'),
+            'type_operation_id' => $type['id'],
+            'client_id' => $client['id'],
+            'autre_operateur_id' => $autreOperateur['id'],
+            'montant' => $montant,
+            'frais' => $fraisTotal,
+            'solde_avant' => $client['solde'],
+            'solde_apres' => $soldeApresClient,
+            'statut' => 'REUSSI',
         ]);
+        $opId = $db->insertID();
 
-        if ($frais > 0) {
-            $beneficeModel->insert([
-                'operation_id'      => $db->insertID(),
-                'type_operation_id' => $type['id'],
-                'montant'           => $frais,
-            ]);
+        if ($fraisTotal > 0) {
+            $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $type['id'], 'montant' => $fraisTotal]);
         }
 
         $db->transComplete();
-
         return redirect()->to('client/dashbord');
     }
     public function historique()
@@ -281,4 +326,86 @@ public function depotForm()
 
         return view('client/historique', $data);
     }
+
+public function transfertMultipleForm()
+{
+    $client = $this->clientConnecte();
+    if (!$client) return redirect()->to('/client/login');
+    return view('client/transfert_multiple', ['client' => $client]);
+}
+
+public function transfertMultiple()
+{
+    $client = $this->clientConnecte();
+    if (!$client) return redirect()->to('/client/login');
+
+    $numeros = array_filter(array_map('trim', explode(',', $this->request->getPost('numeros'))));
+    $montantTotal = (float) $this->request->getPost('montant_total');
+
+    $nb = count($numeros);
+    if ($nb < 2 || $montantTotal <= 0) {
+        return redirect()->to('client/transfert-multiple')->with('error', 'Il faut au moins 2 numéros et un montant valide.');
+    }
+
+    $montantParDest = round($montantTotal / $nb, 2);
+
+    $clientModel = new ClientModel();
+    $typeModel = new TypeOperationModel();
+    $baremeModel = new BaremeFraisModel();
+    $beneficeModel = new BeneficeModel();
+    $type = $typeModel->where('code', 'TRANSFERT')->first();
+
+    // vérifier que tous les numéros sont sur notre réseau
+    $destinataires = [];
+    foreach ($numeros as $num) {
+        $dest = $clientModel->where('numero_telephone', $num)->first();
+        if (!$dest) {
+            return redirect()->to('client/transfert-multiple')->with('error', "Le numéro $num n'est pas sur notre réseau.");
+        }
+        $destinataires[] = $dest;
+    }
+
+    $bareme = $baremeModel->getBaremeParType($type['id'], $montantParDest);
+    $fraisParEnvoi = $bareme ? (float) $bareme['frais_fixe'] + $montantParDest * ((float) $bareme['frais_pourcentage'] / 100) : 0;
+    $totalDebit = ($montantParDest + $fraisParEnvoi) * $nb;
+
+    if ($totalDebit > $client['solde']) {
+        return redirect()->to('client/transfert-multiple')->with('error', 'Solde insuffisant pour cet envoi groupé.');
+    }
+
+    $db = db_connect();
+    $db->transStart();
+
+    $referenceLot = uniqid('LOT-');
+    $soldeCourant = $client['solde'];
+
+    foreach ($destinataires as $dest) {
+        $soldeAvant = $soldeCourant;
+        $soldeCourant -= ($montantParDest + $fraisParEnvoi);
+
+        $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeCourant]);
+        $db->table('clients')->where('id', $dest['id'])->update(['solde' => $dest['solde'] + $montantParDest]);
+
+        $db->table('operations')->insert([
+            'reference' => uniqid('TRF-'),
+            'reference_lot' => $referenceLot,
+            'type_operation_id' => $type['id'],
+            'client_id' => $client['id'],
+            'client_destinataire_id' => $dest['id'],
+            'montant' => $montantParDest,
+            'frais' => $fraisParEnvoi,
+            'solde_avant' => $soldeAvant,
+            'solde_apres' => $soldeCourant,
+            'statut' => 'REUSSI',
+        ]);
+
+        if ($fraisParEnvoi > 0) {
+            $beneficeModel->insert(['operation_id' => $db->insertID(), 'type_operation_id' => $type['id'], 'montant' => $fraisParEnvoi]);
+        }
+    }
+
+    $db->transComplete();
+    return redirect()->to('client/dashbord');
+}
+
 }
