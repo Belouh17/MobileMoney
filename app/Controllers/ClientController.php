@@ -44,13 +44,15 @@ public function auth()
 
         // création automatique
         $id = $model->insert([
-            'numero_telephone'=>$telephone,
-            'solde'=>0
-        ]);
+            'numero_telephone' => $telephone,
+            'solde' => 0,
+        ], true);
 
+        if ($id === false) {
+            return redirect()->back()->withInput()->with('error', 'Impossible de créer le compte client.');
+        }
 
         $client = $model->find($id);
-
     }
 
 
