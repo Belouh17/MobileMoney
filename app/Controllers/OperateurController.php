@@ -16,7 +16,11 @@ class OperateurController extends BaseController
     public function prefixes()
     {
         $model = new PrefixeModel();
-        return view('operateur/prefixes', ['prefixes' => $model->findAll()]);
+        return view('operateur/prefixes', [
+            'title' => 'Préfixes',
+            'activeMenu' => 'prefixes',
+            'prefixes' => $model->findAll(),
+        ]);
     }
 
     // public function ajouterPrefixe()
@@ -53,7 +57,11 @@ class OperateurController extends BaseController
     public function types()
     {
         $model = new TypeOperationModel();
-        return view('operateur/types', ['types' => $model->findAll()]);
+        return view('operateur/types', [
+            'title' => 'Types d\'opérations',
+            'activeMenu' => 'types',
+            'types' => $model->findAll(),
+        ]);
     }
 
     public function ajouterType()
@@ -72,10 +80,13 @@ class OperateurController extends BaseController
     {
         $baremeModel = new BaremeFraisModel();
         $typeModel   = new TypeOperationModel();
+        $type = $typeModel->find($typeOperationId);
 
         return view('operateur/baremes', [
+            'title' => 'Barèmes — ' . ($type['libelle'] ?? ''),
+            'activeMenu' => 'types',
             'baremes' => $baremeModel->where('type_operation_id', $typeOperationId)->findAll(),
-            'type'    => $typeModel->find($typeOperationId),
+            'type'    => $type,
         ]);
     }
 
@@ -117,20 +128,28 @@ class OperateurController extends BaseController
     public function gains()
     {
         $model = new BeneficeModel();
-        return view('operateur/gains', ['gains' => $model->situationGains()]);
+        return view('operateur/gains', [
+            'title' => 'Situation des gains',
+            'activeMenu' => 'gains',
+            'gains' => $model->situationGains(),
+        ]);
     }
 
     public function comptes()
     {
         $model = new ClientModel();
-        return view('operateur/comptes', ['clients' => $model->situationComptes()]);
+        return view('operateur/comptes', [
+            'title' => 'Comptes clients',
+            'activeMenu' => 'comptes',
+            'clients' => $model->situationComptes(),
+        ]);
     }
 
 
 // ---------- Connexion ----------
 public function login()
 {
-    return view('operateur/login');
+    return view('operateur/login', ['title' => 'Connexion']);
 }
 
 public function auth()
@@ -192,7 +211,11 @@ public function logout()
 public function autresOperateurs()
 {
     $model = new AutreOperateurModel();
-    return view('operateur/autres_operateurs', ['operateurs' => $model->findAll()]);
+    return view('operateur/autres_operateurs', [
+        'title' => 'Autres opérateurs',
+        'activeMenu' => 'autresOperateurs',
+        'operateurs' => $model->findAll(),
+    ]);
 }
 
 public function ajouterAutreOperateur()
@@ -218,10 +241,13 @@ public function prefixesAutreOperateur($autreOperateurId)
 {
     $prefixeModel = new AutreOperateurPrefixeModel();
     $operateurModel = new AutreOperateurModel();
+    $operateur = $operateurModel->find($autreOperateurId);
 
     return view('operateur/autres_operateurs_prefixes', [
+        'title' => 'Préfixes — ' . ($operateur['nom'] ?? ''),
+        'activeMenu' => 'autresOperateurs',
         'prefixes' => $prefixeModel->where('autre_operateur_id', $autreOperateurId)->findAll(),
-        'operateur' => $operateurModel->find($autreOperateurId),
+        'operateur' => $operateur,
     ]);
 }
 
@@ -245,12 +271,31 @@ public function montantsAEnvoyer()
 {
     $db = db_connect();
     $data = $db->query('SELECT * FROM vue_montants_a_envoyer')->getResultArray();
-    return view('operateur/montants_a_envoyer', ['montants' => $data]);
+    return view('operateur/montants_a_envoyer', [
+        'title' => 'Montants à envoyer',
+        'activeMenu' => 'montantsEnvoyer',
+        'montants' => $data,
+    ]);
 }
 
 public function dashboard()
 {
-    return view('operateur/dashboard');
+    $prefixeModel = new \App\Models\PrefixeModel();
+    $typeModel = new TypeOperationModel();
+    $autreOperateurModel = new AutreOperateurModel();
+    $clientModel = new ClientModel();
+
+    $data = [
+        'title' => 'Tableau de bord',
+        'activeMenu' => 'dashboard',
+        'stats' => [
+            'nbPrefixes' => $prefixeModel->countAll(),
+            'nbTypes' => $typeModel->countAll(),
+            'nbAutresOperateurs' => $autreOperateurModel->countAll(),
+            'nbClients' => $clientModel->countAll(),
+        ],
+    ];
+    return view('operateur/dashboard', $data);
 }
 
 }

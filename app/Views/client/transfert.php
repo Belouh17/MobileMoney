@@ -1,31 +1,43 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head><meta charset="UTF-8"><title>Transfert</title></head>
-<body>
-    <h2>Transfert d'argent</h2>
-    <p>Solde actuel : <?= $client['solde'] ?> Ar</p>
+<?= $this->extend('client/layout') ?>
 
-    <?php if (session()->getFlashdata('error')): ?>
-        <p style="color:red;"><?= session()->getFlashdata('error') ?></p>
-    <?php endif; ?>
+<?= $this->section('content') ?>
+<div class="card">
+  <div class="card-header">
+    <h3>🔄 Transfert d'argent</h3>
+  </div>
+  <div class="card-body">
+    <div class="stat-card" style="margin-bottom: 24px;">
+      <div class="stat-icon green">💰</div>
+      <div class="stat-info">
+        <div class="stat-label">Solde actuel</div>
+        <div class="stat-value"><?= number_format($client['solde'], 2) ?> Ar</div>
+      </div>
+    </div>
 
     <form method="post" action="/client/transfert">
-        <label>Numéro du destinataire :</label><br>
-        <input type="text" name="telephone_destinataire" required><br><br>
+      <div class="form-group">
+        <label>Numéro du destinataire</label>
+        <input type="text" name="telephone_destinataire" placeholder="Ex: 0331234567" class="form-control" required>
+      </div>
 
-        <label>Montant :</label><br>
-        <input type="number" name="montant" step="0.01" min="1" required><br><br>
+      <div class="form-group">
+        <label>Montant (Ar)</label>
+        <input type="number" name="montant" step="0.01" min="1" placeholder="Ex: 10000" class="form-control" required>
+      </div>
 
-        <label>
-            <input type="checkbox" name="option_frais_retrait" value="AVEC_FRAIS_RETRAIT">
-            Inclure les frais de retrait (le destinataire retire sans frais)
+      <div class="form-group">
+        <label class="form-checkbox">
+          <input type="checkbox" name="option_frais_retrait" value="AVEC_FRAIS_RETRAIT">
+          Inclure les frais de retrait (le destinataire retire sans frais)
         </label>
-        <p><small>Cette option ne s'applique qu'aux transferts vers notre réseau ; elle est ignorée automatiquement pour les envois vers un autre opérateur.</small></p>
-        <br>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+          Cette option ne s'applique qu'aux transferts vers notre réseau.
+        </p>
+      </div>
 
-        <button type="submit">Envoyer</button>
+      <button type="submit" class="btn btn-primary">🔄 Envoyer</button>
+      <a href="/client/dashbord" class="btn btn-outline">← Retour</a>
     </form>
-
-    <a href="/client/dashbord">Retour</a>
-</body>
-</html>
+  </div>
+</div>
+<?= $this->endSection() ?>

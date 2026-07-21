@@ -14,7 +14,7 @@ class ClientController extends BaseController
 
     public function login()
     {
-        return view('client/login');
+        return view('client/login', ['title' => 'Connexion client']);
     }
 
     private function clientConnecte()
@@ -71,26 +71,25 @@ class ClientController extends BaseController
     }
     public function dashbord()
     {
-
         $id = session()->get('client_id');
-
-
         $model = new ClientModel();
+        $client = $model->find($id);
 
-
-        $data['client'] = $model->find($id);
-
-
-        return view(
-            'client/dashbord',
-            $data
-        );
+        return view('client/dashbord', [
+            'title' => 'Tableau de bord',
+            'activeMenu' => 'dashbord',
+            'client' => $client,
+        ]);
     }
     public function depotForm()
     {
         $model = new ClientModel();
-        $data['client'] = $model->find(session()->get('client_id'));
-        return view('client/depot', $data);
+        $client = $model->find(session()->get('client_id'));
+        return view('client/depot', [
+            'title' => 'Dépôt',
+            'activeMenu' => 'depot',
+            'client' => $client,
+        ]);
     }
 
     public function depot()
@@ -132,8 +131,12 @@ class ClientController extends BaseController
     public function retraitForm()
     {
         $model = new ClientModel();
-        $data['client'] = $model->find(session()->get('client_id'));
-        return view('client/retrait', $data);
+        $client = $model->find(session()->get('client_id'));
+        return view('client/retrait', [
+            'title' => 'Retrait',
+            'activeMenu' => 'retrait',
+            'client' => $client,
+        ]);
     }
     public function retrait()
     {
@@ -196,8 +199,12 @@ class ClientController extends BaseController
     public function transfertForm()
     {
         $model = new ClientModel();
-        $data['client'] = $model->find(session()->get('client_id'));
-        return view('client/transfert', $data);
+        $client = $model->find(session()->get('client_id'));
+        return view('client/transfert', [
+            'title' => 'Transfert',
+            'activeMenu' => 'transfert',
+            'client' => $client,
+        ]);
     }
 
     public function transfert()
@@ -315,23 +322,29 @@ class ClientController extends BaseController
     public function historique()
     {
         $clientId = session()->get('client_id');
-
         $db = db_connect();
-
-        $data['operations'] = $db->table('operations')
+        $operations = $db->table('operations')
             ->where('client_id', $clientId)
             ->orderBy('date_operation', 'DESC')
             ->get()
             ->getResult();
 
-        return view('client/historique', $data);
+        return view('client/historique', [
+            'title' => 'Historique',
+            'activeMenu' => 'historique',
+            'operations' => $operations,
+        ]);
     }
 
 public function transfertMultipleForm()
 {
     $client = $this->clientConnecte();
     if (!$client) return redirect()->to('/client/login');
-    return view('client/transfert_multiple', ['client' => $client]);
+    return view('client/transfert_multiple', [
+        'title' => 'Envoi multiple',
+        'activeMenu' => 'transfertMultiple',
+        'client' => $client,
+    ]);
 }
 
 public function transfertMultiple()
