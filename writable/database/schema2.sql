@@ -72,6 +72,11 @@ CREATE TABLE baremes_frais (
         ON DELETE CASCADE
 );
 
+CREATE TABLE promotions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    promo_pourcentage DECIMAL(5,2) NOT NULL DEFAULT 0
+);
+
 -- ==========================
 -- CLIENTS
 -- ==========================

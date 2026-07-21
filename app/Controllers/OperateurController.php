@@ -9,6 +9,7 @@ use App\Models\OperateurModel;
 use App\Models\ClientModel;
 use App\Models\AutreOperateurModel;
 use App\Models\AutreOperateurPrefixeModel;
+use App\Models\PromotionModel;
 
 class OperateurController extends BaseController
 {
@@ -142,6 +143,16 @@ class OperateurController extends BaseController
             'title' => 'Comptes clients',
             'activeMenu' => 'comptes',
             'clients' => $model->situationComptes(),
+        ]);
+    }
+
+    public function promotions()
+    {
+        $model = new PromotionModel();
+        return view('operateur/comptes', [
+            'title' => 'Comptes clients',
+            'activeMenu' => 'comptes',
+             => $model->getPromo(),
         ]);
     }
 

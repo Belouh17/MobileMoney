@@ -7,10 +7,12 @@ use App\Models\TypeOperationModel;
 use App\Models\BaremeFraisModel;
 use App\Models\BeneficeModel;
 use App\Models\AutreOperateurModel;
+use App\Models\PromotionModel;
 
 class ClientController extends BaseController
 {
 
+    private const PROMO_INTERNE = ;
 
     public function login()
     {
@@ -241,7 +243,9 @@ class ClientController extends BaseController
                 $fraisRetraitAnticipe = $baremeRetrait ? (float) $baremeRetrait['frais_fixe'] : 0;
             }
 
-            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe;
+            $promoInterne = $fraisTransfert * (self::PROMO_INTERNE / 100);
+
+            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe - $promoInterne;
             if ($total > $client['solde']) {
                 return redirect()->to('client/transfert')->with('error', 'Solde insuffisant.');
             }
@@ -267,7 +271,15 @@ class ClientController extends BaseController
             $opId = $db->insertID();
 
             if ($fraisTransfert > 0) {
+                if ($promoInterne > 0) {
+                    $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $type['id'], 'montant' =>$fraisTransfert-$promoInterne]);
+                }
+                else{
                 $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $type['id'], 'montant' => $fraisTransfert]);
+                }
+            }
+            if ($promoInterne > 0) {
+                $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $type['id'], 'montant' => $promoInterne]);
             }
             if ($fraisRetraitAnticipe > 0) {
                 $typeRetrait = $typeModel->where('code', 'RETRAIT')->first();
@@ -336,94 +348,93 @@ class ClientController extends BaseController
         ]);
     }
 
-public function transfertMultipleForm()
-{
-    $client = $this->clientConnecte();
-    if (!$client) return redirect()->to('/client/login');
-    return view('client/transfert_multiple', [
-        'title' => 'Envoi multiple',
-        'activeMenu' => 'transfertMultiple',
-        'client' => $client,
-    ]);
-}
-
-public function transfertMultiple()
-{
-    $client = $this->clientConnecte();
-    if (!$client) return redirect()->to('/client/login');
-
-    $numeros = array_filter(array_map('trim', explode(',', $this->request->getPost('numeros'))));
-    $montantTotal = (float) $this->request->getPost('montant_total');
-
-    $nb = count($numeros);
-    if ($nb < 2 || $montantTotal <= 0) {
-        return redirect()->to('client/transfert-multiple')->with('error', 'Il faut au moins 2 numéros et un montant valide.');
-    }
-
-    $montantParDest = round($montantTotal / $nb, 2);
-
-    $clientModel = new ClientModel();
-    $typeModel = new TypeOperationModel();
-    $baremeModel = new BaremeFraisModel();
-    $beneficeModel = new BeneficeModel();
-    $type = $typeModel->where('code', 'TRANSFERT')->first();
-
-    // vérifier que tous les numéros sont sur notre réseau
-    $destinataires = [];
-    foreach ($numeros as $num) {
-        $dest = $clientModel->where('numero_telephone', $num)->first();
-        if (!$dest) {
-            return redirect()->to('client/transfert-multiple')->with('error', "Le numéro $num n'est pas sur notre réseau.");
-        }
-        $destinataires[] = $dest;
-    }
-
-    $bareme = $baremeModel->getBaremeParType($type['id'], $montantParDest);
-    $fraisParEnvoi = $bareme ? (float) $bareme['frais_fixe'] + $montantParDest * ((float) $bareme['frais_pourcentage'] / 100) : 0;
-    $totalDebit = ($montantParDest + $fraisParEnvoi) * $nb;
-
-    if ($totalDebit > $client['solde']) {
-        return redirect()->to('client/transfert-multiple')->with('error', 'Solde insuffisant pour cet envoi groupé.');
-    }
-
-    $db = db_connect();
-    $db->transStart();
-
-    $referenceLot = uniqid('LOT-');
-    $soldeCourant = $client['solde'];
-
-    foreach ($destinataires as $dest) {
-        $soldeAvant = $soldeCourant;
-        $soldeCourant -= ($montantParDest + $fraisParEnvoi);
-
-        $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeCourant]);
-        $db->table('clients')->where('id', $dest['id'])->update(['solde' => $dest['solde'] + $montantParDest]);
-
-        $db->table('operations')->insert([
-            'reference' => uniqid('TRF-'),
-            'reference_lot' => $referenceLot,
-            'type_operation_id' => $type['id'],
-            'client_id' => $client['id'],
-            'client_destinataire_id' => $dest['id'],
-            'montant' => $montantParDest,
-            'frais' => $fraisParEnvoi,
-            'solde_avant' => $soldeAvant,
-            'solde_apres' => $soldeCourant,
-            'statut' => 'REUSSI',
+    public function transfertMultipleForm()
+    {
+        $client = $this->clientConnecte();
+        if (!$client) return redirect()->to('/client/login');
+        return view('client/transfert_multiple', [
+            'title' => 'Envoi multiple',
+            'activeMenu' => 'transfertMultiple',
+            'client' => $client,
         ]);
-
-        if ($fraisParEnvoi > 0) {
-            $beneficeModel->insert(['operation_id' => $db->insertID(), 'type_operation_id' => $type['id'], 'montant' => $fraisParEnvoi]);
-        }
     }
 
-    $db->transComplete();
-    return redirect()->to('client/dashbord');
-}
-public function logout()
-{
-    session()->remove(['client_id', 'telephone']);
-    return redirect()->to('/client/login');
-}
+    public function transfertMultiple()
+    {
+        $client = $this->clientConnecte();
+        if (!$client) return redirect()->to('/client/login');
 
+        $numeros = array_filter(array_map('trim', explode(',', $this->request->getPost('numeros'))));
+        $montantTotal = (float) $this->request->getPost('montant_total');
+
+        $nb = count($numeros);
+        if ($nb < 2 || $montantTotal <= 0) {
+            return redirect()->to('client/transfert-multiple')->with('error', 'Il faut au moins 2 numéros et un montant valide.');
+        }
+
+        $montantParDest = round($montantTotal / $nb, 2);
+
+        $clientModel = new ClientModel();
+        $typeModel = new TypeOperationModel();
+        $baremeModel = new BaremeFraisModel();
+        $beneficeModel = new BeneficeModel();
+        $type = $typeModel->where('code', 'TRANSFERT')->first();
+
+        // vérifier que tous les numéros sont sur notre réseau
+        $destinataires = [];
+        foreach ($numeros as $num) {
+            $dest = $clientModel->where('numero_telephone', $num)->first();
+            if (!$dest) {
+                return redirect()->to('client/transfert-multiple')->with('error', "Le numéro $num n'est pas sur notre réseau.");
+            }
+            $destinataires[] = $dest;
+        }
+
+        $bareme = $baremeModel->getBaremeParType($type['id'], $montantParDest);
+        $fraisParEnvoi = $bareme ? (float) $bareme['frais_fixe'] + $montantParDest * ((float) $bareme['frais_pourcentage'] / 100) : 0;
+        $totalDebit = ($montantParDest + $fraisParEnvoi) * $nb;
+
+        if ($totalDebit > $client['solde']) {
+            return redirect()->to('client/transfert-multiple')->with('error', 'Solde insuffisant pour cet envoi groupé.');
+        }
+
+        $db = db_connect();
+        $db->transStart();
+
+        $referenceLot = uniqid('LOT-');
+        $soldeCourant = $client['solde'];
+
+        foreach ($destinataires as $dest) {
+            $soldeAvant = $soldeCourant;
+            $soldeCourant -= ($montantParDest + $fraisParEnvoi);
+
+            $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeCourant]);
+            $db->table('clients')->where('id', $dest['id'])->update(['solde' => $dest['solde'] + $montantParDest]);
+
+            $db->table('operations')->insert([
+                'reference' => uniqid('TRF-'),
+                'reference_lot' => $referenceLot,
+                'type_operation_id' => $type['id'],
+                'client_id' => $client['id'],
+                'client_destinataire_id' => $dest['id'],
+                'montant' => $montantParDest,
+                'frais' => $fraisParEnvoi,
+                'solde_avant' => $soldeAvant,
+                'solde_apres' => $soldeCourant,
+                'statut' => 'REUSSI',
+            ]);
+
+            if ($fraisParEnvoi > 0) {
+                $beneficeModel->insert(['operation_id' => $db->insertID(), 'type_operation_id' => $type['id'], 'montant' => $fraisParEnvoi]);
+            }
+        }
+
+        $db->transComplete();
+        return redirect()->to('client/dashbord');
+    }
+    public function logout()
+    {
+        session()->remove(['client_id', 'telephone']);
+        return redirect()->to('/client/login');
+    }
 }
