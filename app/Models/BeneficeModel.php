@@ -17,10 +17,15 @@ class BeneficeModel extends Model
     //                  ->findAll();
     // }
 
+// public function situationGains()
+// {
+//     $db = db_connect();
+//     return $db->query('SELECT * FROM vue_gains_frais')->getResultArray();
+// }
+
 public function situationGains()
 {
-    $db = db_connect();
-    return $db->query('SELECT * FROM vue_gains_frais')->getResultArray();
+    return db_connect()->query('SELECT * FROM vue_gains_frais ORDER BY reseau, type_operation')->getResultArray();
 }
 
     public function enregistrer(int $operationId, int $typeOperationId, float $montant): void

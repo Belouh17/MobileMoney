@@ -19,15 +19,29 @@ class OperateurController extends BaseController
         return view('operateur/prefixes', ['prefixes' => $model->findAll()]);
     }
 
+    // public function ajouterPrefixe()
+    // {
+    //     $model = new PrefixeModel();
+    //     $model->insert([
+    //         'prefixe' => $this->request->getPost('prefixe'),
+    //         'actif'   => 1,
+    //     ]);
+    //     return redirect()->to('/operateur/prefixes');
+    // }
+
     public function ajouterPrefixe()
-    {
-        $model = new PrefixeModel();
+{
+    $model = new PrefixeModel();
+    try {
         $model->insert([
             'prefixe' => $this->request->getPost('prefixe'),
             'actif'   => 1,
         ]);
-        return redirect()->to('/operateur/prefixes');
+    } catch (\Throwable $e) {
+        return redirect()->to('/operateur/prefixes')->with('erreur', 'Ce préfixe existe déjà.');
     }
+    return redirect()->to('/operateur/prefixes');
+}
 
     public function supprimerPrefixe($id)
     {

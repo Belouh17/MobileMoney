@@ -23,4 +23,18 @@ class AutreOperateurModel extends Model
 
         return $row ? $this->find($row->autre_operateur_id) : null;
     }
+
+// public function trouverParTelephone(string $numero)
+// {
+//     $prefixe = substr($numero, 0, 3);
+//     return $this->db->table('autres_operateurs ao')
+//         ->select('ao.*')
+//         ->join('autres_operateurs_prefixes p', 'p.autre_operateur_id = ao.id')
+//         ->where('p.prefixe', $prefixe)
+//         ->where('p.actif', 1)
+//         ->where('ao.actif', 1)
+//         ->get()
+//         ->getRowArray();
+// }
+
 }
