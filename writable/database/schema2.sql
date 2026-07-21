@@ -77,6 +77,27 @@ CREATE TABLE promotions (
     promo_pourcentage DECIMAL(5,2) NOT NULL DEFAULT 0
 );
 
+CREATE TABLE epargne (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    client_id INTEGER NOT NULL,
+    pourcentage DECIMAL(15,2) NOT NULL DEFAULT 0,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_modification DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (client_id)
+        REFERENCES clients(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE epargne_clients(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    client_id INTEGER NOT NULL,
+    montant DECIMAL(15,2) NOT NULL DEFAULT 0,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_modification DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (client_id)
+        REFERENCES clients(id)
+        ON DELETE CASCADE
+);
 -- ==========================
 -- CLIENTS
 -- ==========================
@@ -107,8 +128,11 @@ CREATE TABLE operations (
     frais_transfert DECIMAL(15,2) NOT NULL DEFAULT 0,
     frais_retrait_anticipe DECIMAL(15,2) NOT NULL DEFAULT 0,
     option_transfert TEXT,
-    solde_avant DECIMAL(15,2) NOT NULL,
-    solde_apres DECIMAL(15,2) NOT NULL,
+    solde_avant DECIMAL(15,2) NOT NULL DEFAULT 0,
+    solde_apres DECIMAL(15,2) NOT NULL DEFAULT 0,
+    epargne_avant DECIMAL(15,2) NOT NULL,
+    epargne_apres DECIMAL(15,2) NOT NULL,
+    montant DECIMAL(15,2) NOT NULL DEFAULT 0,
     date_operation DATETIME DEFAULT CURRENT_TIMESTAMP,
     statut TEXT NOT NULL DEFAULT 'REUSSI',
 

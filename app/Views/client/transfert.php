@@ -34,7 +34,11 @@
                     Cette option ne s'applique qu'aux transferts vers notre réseau.
                 </p>
             </div>
-
+            <div class="form-groupe">
+                <label for="">Epargne en pourcentage --
+                    <input type="text" name="epargne" placeholder="xxx%">
+                </label>
+            </div>
             <button type="submit" class="btn btn-primary">🔄 Envoyer</button>
             <a href="/client/dashbord" class="btn btn-outline">← Retour</a>
         </form>

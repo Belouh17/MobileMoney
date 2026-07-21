@@ -7,6 +7,7 @@ use App\Models\TypeOperationModel;
 use App\Models\BaremeFraisModel;
 use App\Models\BeneficeModel;
 use App\Models\AutreOperateurModel;
+use App\Models\EpargneModel;
 use App\Models\PromotionModel;
 
 class ClientController extends BaseController
@@ -201,12 +202,27 @@ class ClientController extends BaseController
     public function transfertForm()
     {
         $model = new ClientModel();
+        $modelepargne = new EpargneModel();
         $client = $model->find(session()->get('client_id'));
+        $epargne = $modelepargne->insert('epargne');
         return view('client/transfert', [
             'title' => 'Transfert',
             'activeMenu' => 'transfert',
             'client' => $client,
+            'epargne' => $epargne,
         ]);
+    }
+
+    public function epargne(){
+        $client = $this->clientConnecte();
+
+        $epargne = EpargneModel();
+
+        if (!$epargne){
+            return 0;
+        }
+
+        return view('client/epargne');
     }
 
     public function transfert()
@@ -217,7 +233,7 @@ class ClientController extends BaseController
         $telDest = trim($this->request->getPost('telephone_destinataire'));
         $montant = (float) $this->request->getPost('montant');
         $optionFraisRetrait = $this->request->getPost('option_frais_retrait'); // ignoré si autre opérateur
-
+        $montantepargne = (float) $this->request->getPost('epargne') / 100;
         if ($montant <= 0) {
             return redirect()->to('client/transfert')->with('error', 'Montant invalide.');
         }
@@ -245,7 +261,7 @@ class ClientController extends BaseController
 
             $promoInterne = $fraisTransfert * (self::PROMO_INTERNE / 100);
 
-            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe - $promoInterne;
+            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe - $promoInterne - $montantepargne;
             if ($total > $client['solde']) {
                 return redirect()->to('client/transfert')->with('error', 'Solde insuffisant.');
             }

@@ -26,6 +26,7 @@
             <a href="/client/transfert" class="btn btn-primary">🔄 Transfert</a>
             <a href="/client/transfert-multiple" class="btn btn-info">👥 Envoi multiple</a>
             <a href="/client/historique" class="btn btn-outline">📋 Historique</a>
+            <a href="/clien/epargne"> Epargne</a>
         </div>
     </div>
 </div>
