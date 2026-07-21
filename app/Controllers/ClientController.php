@@ -87,11 +87,16 @@ class ClientController extends BaseController
     public function depotForm()
     {
         $model = new ClientModel();
+        $epargneModel = new EpargneModel();
         $client = $model->find(session()->get('client_id'));
+        $tauxEpargne = $epargneModel->getTauxEpargne($client['id']);
+        $montantEpargne = $epargneModel->getMontantEpargne($client['id']);
         return view('client/depot', [
             'title' => 'Dépôt',
             'activeMenu' => 'depot',
             'client' => $client,
+            'tauxEpargne' => $tauxEpargne,
+            'montantEpargne' => $montantEpargne,
         ]);
     }
 
@@ -104,6 +109,12 @@ class ClientController extends BaseController
             return redirect()->to('client/depot')->with('error', 'Montant invalide.');
         }
 
+        // Récupérer le taux d'épargne du client
+        $epargneModel = new EpargneModel();
+        $tauxEpargne = $epargneModel->getTauxEpargne($clientId);
+        $montantEpargneCalcule = $montant * ($tauxEpargne / 100);
+        $montantDisponible = $montant - $montantEpargneCalcule;
+
         $typeModel = new TypeOperationModel();
         $type = $typeModel->where('code', 'DEPOT')->first();
 
@@ -112,7 +123,7 @@ class ClientController extends BaseController
 
         $client = $db->table('clients')->where('id', $clientId)->get()->getRow();
 
-        $nouveauSolde = $client->solde + $montant;
+        $nouveauSolde = $client->solde + $montantDisponible;
 
         $db->table('clients')->where('id', $clientId)->update(['solde' => $nouveauSolde]);
 
@@ -126,6 +137,16 @@ class ClientController extends BaseController
             'solde_apres'       => $nouveauSolde,
             'statut'            => 'REUSSI',
         ]);
+
+        // Enregistrer l'épargne sur le dépôt
+        if ($montantEpargneCalcule > 0) {
+            $db->table('epargne_clients')->insert([
+                'client_id' => $clientId,
+                'montant' => $montantEpargneCalcule,
+                'date_creation' => date('Y-m-d H:i:s'),
+                'date_modification' => date('Y-m-d H:i:s'),
+            ]);
+        }
 
         $db->transComplete();
 
@@ -259,11 +280,6 @@ class ClientController extends BaseController
         $telDest = trim($this->request->getPost('telephone_destinataire'));
         $montant = (float) $this->request->getPost('montant');
         $optionFraisRetrait = $this->request->getPost('option_frais_retrait');
-        $pourcentageEpargne = (float) $this->request->getPost('epargne');
-        if ($pourcentageEpargne < 0 || $pourcentageEpargne > 100) {
-            $pourcentageEpargne = 0;
-        }
-        $montantEpargneCalcule = $montant * ($pourcentageEpargne / 100);
         if ($montant <= 0) {
             return redirect()->to('client/transfert')->with('error', 'Montant invalide.');
         }
@@ -292,13 +308,12 @@ class ClientController extends BaseController
             $promoInterne = $fraisTransfert * (self::PROMO_INTERNE / 100);
 
             $total = $montant + $fraisTransfert + $fraisRetraitAnticipe - $promoInterne;
-            $totalAvecEpargne = $total + $montantEpargneCalcule;
-            if ($totalAvecEpargne > $client['solde']) {
+            if ($total > $client['solde']) {
                 return redirect()->to('client/transfert')->with('error', 'Solde insuffisant.');
             }
 
             $db->transStart();
-            $soldeApresClient = $client['solde'] - $totalAvecEpargne;
+            $soldeApresClient = $client['solde'] - $total;
             $soldeApresDest = $destinataire['solde'] + $montant + $fraisRetraitAnticipe;
 
             $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeApresClient]);
@@ -331,16 +346,6 @@ class ClientController extends BaseController
             if ($fraisRetraitAnticipe > 0) {
                 $typeRetrait = $typeModel->where('code', 'RETRAIT')->first();
                 $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $typeRetrait['id'], 'montant' => $fraisRetraitAnticipe]);
-            }
-
-            // Enregistrer dans l'épargne si > 0
-            if ($montantEpargneCalcule > 0) {
-                $db->table('epargne_clients')->insert([
-                    'client_id' => $client['id'],
-                    'montant' => $montantEpargneCalcule,
-                    'date_creation' => date('Y-m-d H:i:s'),
-                    'date_modification' => date('Y-m-d H:i:s'),
-                ]);
             }
 
             $db->transComplete();

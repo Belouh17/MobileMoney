@@ -24,16 +24,6 @@
         </div>
       </div>
       <?php endif; ?>
-      <?php if ($tauxEpargne > 0): ?>
-      <div class="stat-card">
-        <div class="stat-icon indigo">🏦</div>
-        <div class="stat-info">
-          <div class="stat-label">Épargne active</div>
-          <div class="stat-value"><?= number_format($tauxEpargne, 0) ?>%</div>
-          <div class="stat-sub">Montant épargné: <?= number_format($montantEpargne, 2) ?> Ar</div>
-        </div>
-      </div>
-      <?php endif; ?>
     </div>
 
     <?php if ($promo > 0): ?>
@@ -51,12 +41,6 @@
       <div class="form-group">
         <label>Montant (Ar)</label>
         <input type="number" name="montant" step="0.01" min="1" placeholder="Ex: 10000" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label>Épargne en pourcentage (%)</label>
-        <input type="number" name="epargne" min="0" max="100" step="1" value="<?= (int) $tauxEpargne ?>" class="form-control" style="max-width:200px">
-        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Un pourcentage du montant sera mis de côté.</p>
       </div>
 
       <div class="form-group">
