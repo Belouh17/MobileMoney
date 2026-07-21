@@ -1,5 +1,5 @@
 INSERT INTO operateurs (nom_utilisateur, mot_de_passe) VALUES
-('admin', '$2y$10$exempleHashRemplaceParPasswordHash');
+('admin', '$2y$10$UoBKnWQ2cbaP5vBeqwHqN.Si6RmCBQoBHC4PCIvVcnygCPjnjMODu');
 
 INSERT INTO prefixes_operateur (prefixe) VALUES ('033'), ('037');
 

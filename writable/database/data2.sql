@@ -4,7 +4,7 @@
 
 INSERT INTO operateurs (nom_utilisateur, mot_de_passe)
 VALUES
-('admin', 'admin123');
+('admin', '$2y$10$UoBKnWQ2cbaP5vBeqwHqN.Si6RmCBQoBHC4PCIvVcnygCPjnjMODu');
 
 -- ==========================
 -- PREFIXES DE NOTRE OPERATEUR
