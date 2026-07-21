@@ -14,6 +14,9 @@ $routes->post('/login', 'OperateurController::auth');
 $routes->get('/operateur/logout', 'OperateurController::logout');
 
 $routes->group('operateur', ['filter' => 'operateurAuth'], function ($routes) {
+
+ $routes->get('dashboard', 'OperateurController::dashboard');
+
     $routes->get('prefixes', 'OperateurController::prefixes');
     $routes->post('prefixes/ajouter', 'OperateurController::ajouterPrefixe');
     $routes->post('prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixe/$1');

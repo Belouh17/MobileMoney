@@ -133,6 +133,31 @@ public function login()
     return view('operateur/login');
 }
 
+// public function auth()
+// {
+//     $model = new OperateurModel();
+
+//     $nomUtilisateur = trim($this->request->getPost('username'));
+//     $motDePasse = $this->request->getPost('password');
+
+//     $operateur = $model->where('nom_utilisateur', $nomUtilisateur)
+//                         ->where('actif', 1)
+//                         ->first();
+
+//     if (!$operateur || !password_verify($motDePasse, $operateur['mot_de_passe'])) {
+//         return redirect()->to('/operateur/login')->with('erreur', 'Identifiants incorrects.');
+//     }
+
+//     $model->update($operateur['id'], ['date_derniere_connexion' => date('Y-m-d H:i:s')]);
+
+//     session()->set([
+//         'operateur_id' => $operateur['id'],
+//         'operateur_nom' => $operateur['nom_utilisateur'],
+//     ]);
+
+//     return redirect()->to('/operateur/prefixes');
+// }
+
 public function auth()
 {
     $model = new OperateurModel();
@@ -155,7 +180,7 @@ public function auth()
         'operateur_nom' => $operateur['nom_utilisateur'],
     ]);
 
-    return redirect()->to('/operateur/prefixes');
+    return redirect()->to('/operateur/dashboard'); // <-- au lieu de /operateur/prefixes
 }
 
 public function logout()
@@ -221,6 +246,11 @@ public function montantsAEnvoyer()
     $db = db_connect();
     $data = $db->query('SELECT * FROM vue_montants_a_envoyer')->getResultArray();
     return view('operateur/montants_a_envoyer', ['montants' => $data]);
+}
+
+public function dashboard()
+{
+    return view('operateur/dashboard');
 }
 
 }
