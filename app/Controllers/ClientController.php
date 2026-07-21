@@ -13,7 +13,7 @@ use App\Models\PromotionModel;
 class ClientController extends BaseController
 {
 
-    private const PROMO_INTERNE = ;
+    private const PROMO_INTERNE = 1 ;
 
     public function login()
     {
