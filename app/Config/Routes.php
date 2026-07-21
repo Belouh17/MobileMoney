@@ -38,6 +38,8 @@ $routes->group('operateur', ['filter' => 'operateurAuth'], function ($routes) {
     $routes->post('autres-operateurs/prefixes/supprimer/(:num)', 'OperateurController::supprimerPrefixeAutreOperateur/$1');
 
     $routes->get('montants-a-envoyer', 'OperateurController::montantsAEnvoyer');
+    $routes->get('promotions', 'OperateurController::promotions');
+    $routes->post('promotions/modifier', 'OperateurController::modifierPromotion');
 });
 
 $routes->group('client', function ($routes) {
@@ -58,6 +60,7 @@ $routes->group('client', function ($routes) {
 
     $routes->get('transfert-multiple', 'ClientController::transfertMultipleForm');
     $routes->post('transfert-multiple', 'ClientController::transfertMultiple');
-    $routes->get('epargne , ClientController::epargne');
+    $routes->get('epargne', 'ClientController::epargne');
+    $routes->post('epargne/definir', 'ClientController::definirEpargne');
 });
 

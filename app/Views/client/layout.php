@@ -31,19 +31,22 @@
                     <span class="nav-icon">📋</span> Historique
                 </a>
 
-                <div class="nav-label">Opérations</div>
-                <a href="/client/depot" class="nav-item <?= $activeMenu === 'depot' ? 'active' : '' ?>">
-                    <span class="nav-icon">📥</span> Dépôt
-                </a>
-                <a href="/client/retrait" class="nav-item <?= $activeMenu === 'retrait' ? 'active' : '' ?>">
-                    <span class="nav-icon">📤</span> Retrait
-                </a>
-                <a href="/client/transfert" class="nav-item <?= $activeMenu === 'transfert' ? 'active' : '' ?>">
-                    <span class="nav-icon">🔄</span> Transfert
-                </a>
-                <a href="/client/transfert-multiple" class="nav-item <?= $activeMenu === 'transfertMultiple' ? 'active' : '' ?>">
-                    <span class="nav-icon">👥</span> Envoi multiple
-                </a>
+      <div class="nav-label">Opérations</div>
+      <a href="/client/depot" class="nav-item <?= $activeMenu === 'depot' ? 'active' : '' ?>">
+        <span class="nav-icon">📥</span> Dépôt
+      </a>
+      <a href="/client/retrait" class="nav-item <?= $activeMenu === 'retrait' ? 'active' : '' ?>">
+        <span class="nav-icon">📤</span> Retrait
+      </a>
+      <a href="/client/transfert" class="nav-item <?= $activeMenu === 'transfert' ? 'active' : '' ?>">
+        <span class="nav-icon">🔄</span> Transfert
+      </a>
+      <a href="/client/transfert-multiple" class="nav-item <?= $activeMenu === 'transfertMultiple' ? 'active' : '' ?>">
+        <span class="nav-icon">👥</span> Envoi multiple
+      </a>
+      <a href="/client/epargne" class="nav-item <?= $activeMenu === 'epargne' ? 'active' : '' ?>">
+        <span class="nav-icon">🏦</span> Épargne
+      </a>
             </nav>
 
             <div class="sidebar-footer">

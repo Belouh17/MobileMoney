@@ -203,26 +203,52 @@ class ClientController extends BaseController
     {
         $model = new ClientModel();
         $modelepargne = new EpargneModel();
+        $promotionModel = new PromotionModel();
         $client = $model->find(session()->get('client_id'));
-        $epargne = $modelepargne->insert('epargne');
+        $tauxEpargne = $modelepargne->getTauxEpargne($client['id']);
+        $montantEpargne = $modelepargne->getMontantEpargne($client['id']);
+        $promo = $promotionModel->getPromo();
         return view('client/transfert', [
             'title' => 'Transfert',
             'activeMenu' => 'transfert',
             'client' => $client,
-            'epargne' => $epargne,
+            'tauxEpargne' => $tauxEpargne,
+            'montantEpargne' => $montantEpargne,
+            'promo' => $promo,
         ]);
     }
 
     public function epargne(){
         $client = $this->clientConnecte();
+        if (!$client) return redirect()->to('/client/login');
 
-        $epargne = EpargneModel();
+        $epargneModel = new EpargneModel();
+        $tauxEpargne = $epargneModel->getTauxEpargne($client['id']);
+        $montantEpargne = $epargneModel->getMontantEpargne($client['id']);
 
-        if (!$epargne){
-            return 0;
+        return view('client/epargne', [
+            'title' => 'Épargne',
+            'activeMenu' => 'epargne',
+            'client' => $client,
+            'tauxEpargne' => $tauxEpargne,
+            'montantEpargne' => $montantEpargne,
+        ]);
+    }
+
+    public function definirEpargne()
+    {
+        $client = $this->clientConnecte();
+        if (!$client) return redirect()->to('/client/login');
+
+        $pourcentage = (float) $this->request->getPost('pourcentage');
+        if ($pourcentage < 0 || $pourcentage > 100) {
+            return redirect()->to('client/epargne')->with('error', 'Le pourcentage doit être entre 0 et 100.');
         }
 
-        return view('client/epargne');
+        $epargneModel = new EpargneModel();
+        $epargneModel->definirTaux($client['id'], $pourcentage);
+
+        return redirect()->to('client/epargne')->with('succes', 'Taux d\'épargne mis à jour.');
     }
 
     public function transfert()
@@ -232,8 +258,12 @@ class ClientController extends BaseController
 
         $telDest = trim($this->request->getPost('telephone_destinataire'));
         $montant = (float) $this->request->getPost('montant');
-        $optionFraisRetrait = $this->request->getPost('option_frais_retrait'); // ignoré si autre opérateur
-        $montantepargne = (float) $this->request->getPost('epargne') / 100;
+        $optionFraisRetrait = $this->request->getPost('option_frais_retrait');
+        $pourcentageEpargne = (float) $this->request->getPost('epargne');
+        if ($pourcentageEpargne < 0 || $pourcentageEpargne > 100) {
+            $pourcentageEpargne = 0;
+        }
+        $montantEpargneCalcule = $montant * ($pourcentageEpargne / 100);
         if ($montant <= 0) {
             return redirect()->to('client/transfert')->with('error', 'Montant invalide.');
         }
@@ -261,13 +291,14 @@ class ClientController extends BaseController
 
             $promoInterne = $fraisTransfert * (self::PROMO_INTERNE / 100);
 
-            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe - $promoInterne - $montantepargne;
-            if ($total > $client['solde']) {
+            $total = $montant + $fraisTransfert + $fraisRetraitAnticipe - $promoInterne;
+            $totalAvecEpargne = $total + $montantEpargneCalcule;
+            if ($totalAvecEpargne > $client['solde']) {
                 return redirect()->to('client/transfert')->with('error', 'Solde insuffisant.');
             }
 
             $db->transStart();
-            $soldeApresClient = $client['solde'] - $total;
+            $soldeApresClient = $client['solde'] - $totalAvecEpargne;
             $soldeApresDest = $destinataire['solde'] + $montant + $fraisRetraitAnticipe;
 
             $db->table('clients')->where('id', $client['id'])->update(['solde' => $soldeApresClient]);
@@ -300,6 +331,16 @@ class ClientController extends BaseController
             if ($fraisRetraitAnticipe > 0) {
                 $typeRetrait = $typeModel->where('code', 'RETRAIT')->first();
                 $beneficeModel->insert(['operation_id' => $opId, 'type_operation_id' => $typeRetrait['id'], 'montant' => $fraisRetraitAnticipe]);
+            }
+
+            // Enregistrer dans l'épargne si > 0
+            if ($montantEpargneCalcule > 0) {
+                $db->table('epargne_clients')->insert([
+                    'client_id' => $client['id'],
+                    'montant' => $montantEpargneCalcule,
+                    'date_creation' => date('Y-m-d H:i:s'),
+                    'date_modification' => date('Y-m-d H:i:s'),
+                ]);
             }
 
             $db->transComplete();

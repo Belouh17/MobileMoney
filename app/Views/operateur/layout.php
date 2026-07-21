@@ -46,12 +46,16 @@
                     <span class="nav-icon">🏢</span>
                     Autres opérateurs
                 </a>
-                <a href="/operateur/montants-a-envoyer" class="nav-item <?= $activeMenu === 'montantsEnvoyer' ? 'active' : '' ?>">
-                    <span class="nav-icon">💰</span>
-                    Montants à envoyer
-                </a>
+      <a href="/operateur/montants-a-envoyer" class="nav-item <?= $activeMenu === 'montantsEnvoyer' ? 'active' : '' ?>">
+        <span class="nav-icon">💰</span>
+        Montants à envoyer
+      </a>
+      <a href="/operateur/promotions" class="nav-item <?= $activeMenu === 'promotions' ? 'active' : '' ?>">
+        <span class="nav-icon">🎉</span>
+        Promotions
+      </a>
 
-                <div class="nav-label">Rapports</div>
+      <div class="nav-label">Rapports</div>
                 <a href="/operateur/gains" class="nav-item <?= $activeMenu === 'gains' ? 'active' : '' ?>">
                     <span class="nav-icon">📈</span>
                     Situation des gains

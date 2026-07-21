@@ -125,6 +125,27 @@ class OperateurController extends BaseController
         return redirect()->back();
     }
 
+    public function promotions()
+    {
+        $promotionModel = new PromotionModel();
+        return view('operateur/promotions', [
+            'title' => 'Promotions',
+            'activeMenu' => 'promotions',
+            'promo' => $promotionModel->getPromo(),
+        ]);
+    }
+
+    public function modifierPromotion()
+    {
+        $promotionModel = new PromotionModel();
+        $pourcentage = (float) $this->request->getPost('promo_pourcentage');
+        if ($pourcentage < 0 || $pourcentage > 100) {
+            return redirect()->to('/operateur/promotions')->with('erreur', 'Le pourcentage doit être entre 0 et 100.');
+        }
+        $promotionModel->setPromo($pourcentage);
+        return redirect()->to('/operateur/promotions')->with('succes', 'Promotion mise à jour.');
+    }
+
     // ---------- RAPPORTS ----------
     public function gains()
     {
@@ -145,17 +166,6 @@ class OperateurController extends BaseController
             'clients' => $model->situationComptes(),
         ]);
     }
-
-    public function promotions()
-    {
-        $model = new PromotionModel();
-        return view('operateur/comptes', [
-            'title' => 'Comptes clients',
-            'activeMenu' => 'comptes',
-             => $model->getPromo(),
-        ]);
-    }
-
 
 // ---------- Connexion ----------
 public function login()
